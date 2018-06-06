@@ -29,6 +29,7 @@ const config = {
   context: path.join(appRootDir.get()),
   entry: ["@babel/polyfill", ...devEntries, "./client/src/entry/js/client"],
   output: {
+    path: path.join(appRootDir.get(), "dist"),
     filename: !IS_PRODUCTION ? "client/[name].js" : "client/[name].js",
     sourceMapFilename: !IS_PRODUCTION
       ? "client/[name].map.js"
@@ -36,7 +37,6 @@ const config = {
     chunkFilename: !IS_PRODUCTION
       ? "client/chunks/[name].js"
       : "client/chunks/[name].[chunkhash].chunk.js",
-    path: path.join(appRootDir.get(), "public"),
     publicPath: PUBLIC_PATH,
     pathinfo: !IS_PRODUCTION
   },
@@ -200,7 +200,7 @@ const config = {
     modules: ["node_modules", path.join(appRootDir.get(), "client")]
   },
   plugins: [
-    new CleanWebpackPlugin(["public"], {
+    new CleanWebpackPlugin(["dist"], {
       root: path.resolve(appRootDir.get())
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),

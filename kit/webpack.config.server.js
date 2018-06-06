@@ -25,9 +25,9 @@ const config = {
   context: path.join(appRootDir.get()),
   entry: ["./client/src/entry/js/server"],
   output: {
+    path: path.join(appRootDir.get(), "dist"),
     filename: "server/[name].js",
     sourceMapFilename: "server/[name].map.js",
-    path: path.join(appRootDir.get(), "public"),
     libraryTarget: "commonjs2",
     publicPath: PUBLIC_PATH
   },

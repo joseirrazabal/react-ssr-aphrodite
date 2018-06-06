@@ -9,6 +9,9 @@ import "slick-carousel/slick/slick-theme.css";
 import ReactLogoImage from "../img/react-logo.png";
 
 class Home extends Component {
+  prueba = () => {
+    console.log("bien");
+  };
   render() {
     var settings = {
       dots: true,
