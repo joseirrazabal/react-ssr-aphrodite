@@ -1,6 +1,7 @@
 {
   "env": {
     "development": {
+      "compact": "auto",
       "presets": [
         [
           "@babel/env",
@@ -13,12 +14,6 @@
         "@babel/stage-3"
       ],
       "plugins": [
-        [
-          "@babel/syntax-object-rest-spread",
-          {
-            "useBuiltIns": true
-          }
-        ],
         "@babel/transform-react-jsx-source",
         "react-hot-loader/babel"
       ]
@@ -36,23 +31,13 @@
         "@babel/react",
         "@babel/stage-3"
       ],
-      "plugins": [
-        [
-          "@babel/syntax-object-rest-spread",
-          {
-            "useBuiltIns": true
-          }
-        ]
-      ]
+      "plugins": []
     },
     "server": {
       "presets": [
         [
           "@babel/env",
           {
-            "targets": {
-              "node": "8.9.3"
-            },
             "modules": false,
             "useBuiltIns": "entry"
           }
@@ -61,12 +46,6 @@
         "@babel/stage-3"
       ],
       "plugins": [
-        [
-          "@babel/syntax-object-rest-spread",
-          {
-            "useBuiltIns": true
-          }
-        ],
         "@babel/transform-react-jsx-source"
       ]
     }

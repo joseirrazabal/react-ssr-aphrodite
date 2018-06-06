@@ -6,13 +6,12 @@ const PORT_NUMBER = process.env.PORT || 8080;
 
 const app = express();
 
-if (!isDevelopment) {
-  const compression = require("compression");
-  app.use(compression());
-}
+const compression = require("compression");
+app.use(compression());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public", { maxAge: "365d" }));
+app.use(express.static("assets", { maxAge: "365d" }));
 
 if (isDevelopment) {
   const webpack = require("webpack");
@@ -35,12 +34,14 @@ if (isDevelopment) {
   );
   app.use(webpackHotServerMiddleware(multiCompiler));
 } else {
-  const manifests = {};
-  manifests.server = require("./public/dist/server-manifest");
-  manifests.client = require("./public/dist/client-manifest");
+  // const manifests = {};
+  // manifests.server = require("../public/dist/server-manifest");
+  // manifests.client = require("../public/dist/client-manifest");
 
-  const serverRender = require("./public/dist/server/main").default;
-  app.use(serverRender(manifests));
+  const serverRender = require("../public/server/main").default;
+  app.use(
+    serverRender({ clientStats: require("../public/client-stats.json") })
+  );
 }
 
 app.listen(PORT_NUMBER, () => {

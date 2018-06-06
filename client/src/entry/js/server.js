@@ -1,88 +1,156 @@
 import React from "react";
-import { renderToString } from "react-dom/server";
-import { Helmet } from "react-helmet";
+import { compose } from "redux";
+import { renderToString, renderToStaticMarkup } from "react-dom/server";
+import Helmet from "react-helmet";
 
-import App from "./App";
+import Html from "./Html";
+import Home from "../../views/home/js/Slick";
 
-import { initializeServerSideHeaders } from "src/utils/EnvUtils";
-import { isMobileBrowser } from "src/utils/MobileUtils";
+function flatten(arr) {
+  return [].concat.apply([], arr);
+}
 
-import {
-  getPaceLoadingBarStyle,
-  getPaceLoadingBarScript
-} from "src/utils/InlineScriptsUtils";
+function uniq(arr) {
+  return [...new Set(arr)];
+}
 
-const render = manifests => (req, res) => {
-  initializeServerSideHeaders(req.headers);
+function isTruthy(val) {
+  return !!val;
+}
 
-  const context = {
-    splitPoints: []
-  };
+const flattenUniq = compose(
+  uniq,
+  flatten
+);
 
-  const markup = renderToString(
-    <App type="server" url={req.url} context={context} />
+function fetchComponentData(renderProps, store) {
+  const requests = renderProps.components.filter(isTruthy).map(component => {
+    // Handle `connect`ed components.
+    if (component.WrappedComponent) {
+      component = component.WrappedComponent;
+    }
+    if (component.fetchData) {
+      const { query, params, history } = renderProps;
+      return (
+        component
+          .fetchData({
+            dispatch: store.dispatch,
+            query,
+            params,
+            history
+          })
+          // Make sure promise always successfully resolves
+          .catch(() => {})
+      );
+    }
+  });
+
+  return Promise.all(requests);
+}
+
+function isNotFound(renderProps) {
+  return (
+    !renderProps ||
+    renderProps.components.some(component => component === NotFoundComponent)
   );
+}
 
-  if (context.url) {
-    return res.redirect(302, context.url);
+function getJsByChunkName(name, { assetsByChunkName }) {
+  let assets = assetsByChunkName[name];
+  if (!Array.isArray(assets)) {
+    assets = [assets];
   }
+  return assets.find(asset => /\.js$/.test(asset));
+}
 
-  const helmet = Helmet.renderStatic();
+function getJsByModuleIds(moduleIds, { modulesById, chunksById }) {
+  const chunkIds = flatten(
+    moduleIds.map(id => {
+      const clientModule = modulesById[id];
+      if (!clientModule) {
+        throw new Error(`${id} not found in client stats`);
+      }
+      return clientModule.chunks;
+    })
+  );
+  return flattenUniq(
+    chunkIds.map(id => {
+      return chunksById[id].files
+        .filter(file => /\.js$/.test(file))
+        .filter(file => !/\.hot-update\.js$/.test(file));
+    })
+  );
+}
 
-  const LoadingBarStyle = !isMobileBrowser() ? getPaceLoadingBarStyle() : "";
-  const LoadingBarScript = !isMobileBrowser() ? getPaceLoadingBarScript() : "";
+function getCssByChunkName(name, { assetsByChunkName }) {
+  let assets = assetsByChunkName[name];
+  if (!Array.isArray(assets)) {
+    assets = [assets];
+  }
+  return assets.find(asset => /\.css$/.test(asset));
+}
 
-  const SplitPointsScript = `
-    <script>
-      window.splitPoints = ${JSON.stringify(context.splitPoints)};
-      window.serverSideHeaders = ${JSON.stringify(req.headers)};
-    </script>
-  `;
-  const ChunkManifestScript =
-    manifests.client && manifests.client["manifest.js"]
-      ? `
-    <script src="${manifests.client["manifest.js"]}"></script>
-  `
-      : "";
+function getJs(moduleIds, stats) {
+  return [
+    getJsByChunkName("vendors", stats),
+    ...getJsByModuleIds(moduleIds, stats),
+    getJsByChunkName("main", stats)
+  ].filter(isTruthy);
+}
 
-  console.log("bien");
+function getCss(stats) {
+  return [
+    getCssByChunkName("main", stats),
+    getCssByChunkName("vendors", stats)
+  ].filter(isTruthy);
+}
 
-  return res.send(`
-    <!doctype html>
-    <html>
-      <head>
-        ${helmet.title.toString()}
-        ${helmet.meta.toString()}
-        ${helmet.link.toString()}
-        ${helmet.script.toString()}
-        ${helmet.noscript.toString()}
+function render(stats) {
+  const markup = renderToString(<Home />);
+  const head = Helmet.rewind();
+  const js = getJs([], stats);
+  const css = getCss(stats);
 
-        <link rel="stylesheet" href="${
-          !manifests.server
-            ? "/dist/server/main.css"
-            : manifests.server["main.css"]
-        }" />
-        ${LoadingBarStyle}
-      </head>
-      <body>
-        <div id="content">${markup}</div>
+  return renderToStaticMarkup(
+    <Html js={js} css={css} html={markup} head={head} initialState={{}} />
+  );
+}
 
-        ${LoadingBarScript}
-        ${SplitPointsScript}
-        ${ChunkManifestScript}
-        <script src="${
-          !manifests.client
-            ? "/dist/client/chunks/vendors.js"
-            : manifests.client["vendors.js"]
-        }"></script>
-        <script src="${
-          !manifests.client
-            ? "/dist/client/main.js"
-            : manifests.client["main.js"]
-        }"></script>
-      </body>
-    </html>
-  `);
+/**
+ * Express middleware to render HTML using react-router
+ * @param  {object}     stats Webpack stats output
+ * @return {function}   middleware function
+ */
+export default ({ clientStats }) => {
+  // Build stats maps for quicker lookups.
+  const modulesById = clientStats.modules.reduce((modules, mod) => {
+    modules[mod.id] = mod;
+    return modules;
+  }, {});
+  const chunksById = clientStats.chunks.reduce((chunks, chunk) => {
+    chunks[chunk.id] = chunk;
+    return chunks;
+  }, {});
+  const assetsByChunkName = clientStats.assetsByChunkName;
+
+  /**
+   * @param  {object}     req Express request object
+   * @param  {object}     res Express response object
+   * @return {undefined}  undefined
+   */
+  return (req, res, next) => {
+    const url = req.url;
+
+    let html;
+    try {
+      html = render({
+        modulesById,
+        chunksById,
+        assetsByChunkName
+      });
+    } catch (ex) {
+      return next(ex);
+    }
+    res.status(404).send(`<!doctype html>${html}`);
+  };
 };
-
-export default render;
