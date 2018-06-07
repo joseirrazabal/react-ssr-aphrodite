@@ -27,7 +27,7 @@ const config = {
   mode: !IS_PRODUCTION ? "development" : "production",
   name: "client",
   context: path.join(appRootDir.get()),
-  entry: ["@babel/polyfill", ...devEntries, "./client/src/entry/js/client"],
+  entry: ["@babel/polyfill", ...devEntries, "./client"],
   output: {
     path: path.join(appRootDir.get(), "dist"),
     filename: !IS_PRODUCTION ? "client/[name].js" : "client/[name].js",
@@ -101,7 +101,10 @@ const config = {
       },
       {
         test: /\.(scss|css)$/,
-        include: path.join(appRootDir.get(), "/client/src/"),
+        include: [
+          path.join(appRootDir.get(), "src"),
+          path.join(appRootDir.get(), "css")
+        ],
         use: [
           !IS_PRODUCTION ? "style-loader" : MiniCssExtractPlugin.loader,
           {
@@ -197,7 +200,7 @@ const config = {
     ]
   },
   resolve: {
-    modules: ["node_modules", path.join(appRootDir.get(), "client")]
+    modules: ["node_modules", path.join(appRootDir.get(), "src")]
   },
   plugins: [
     new CleanWebpackPlugin(["dist"], {

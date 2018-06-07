@@ -23,7 +23,7 @@ const config = {
   mode: "development",
   name: "server",
   context: path.join(appRootDir.get()),
-  entry: ["./client/src/entry/js/server"],
+  entry: ["./server"],
   output: {
     path: path.join(appRootDir.get(), "dist"),
     filename: "server/[name].js",
@@ -60,7 +60,10 @@ const config = {
       },
       {
         test: /\.(scss|css)$/,
-        include: path.join(appRootDir.get(), "/client/src/"),
+        include: [
+          path.join(appRootDir.get(), "src"),
+          path.join(appRootDir.get(), "css")
+        ],
         use: [
           {
             loader: "css-loader/locals",
@@ -130,7 +133,7 @@ const config = {
     ]
   },
   resolve: {
-    modules: ["node_modules", path.join(appRootDir.get(), "client")]
+    modules: ["node_modules", path.join(appRootDir.get(), "src")]
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
