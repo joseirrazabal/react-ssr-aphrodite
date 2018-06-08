@@ -112,7 +112,6 @@ const config = {
             options: {
               modules: true,
               importLoaders: 1,
-              // localIdentName: "[name]",
               localIdentName: !IS_PRODUCTION
                 ? "[name]_[local]_[hash:base64:3]"
                 : "[local]_[hash:base64:3]",
@@ -162,7 +161,7 @@ const config = {
         }
       },
       {
-        test: /.*\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|ico|webp)$/i,
+        test: /.*\.(eot|woff|woff2|ttf|svg|png|jpg|jpeg|gif|ico|webp)$/i,
         use: [
           {
             loader: "url-loader",

@@ -49,6 +49,7 @@ const config = {
             loader: "css-loader/locals",
             options: {
               modules: false,
+              importLoaders: 1,
               localIdentName: !IS_PRODUCTION
                 ? "[name]_[local]_[hash:base64:3]"
                 : "[local]_[hash:base64:3]"
@@ -72,7 +73,6 @@ const config = {
               localIdentName: !IS_PRODUCTION
                 ? "[name]_[local]_[hash:base64:3]"
                 : "[local]_[hash:base64:3]"
-              // localIdentName: "[name]"
             }
           },
           "sass-loader"
@@ -91,11 +91,12 @@ const config = {
         // include,
         loader: "url-loader",
         options: {
+          name: "sounds/[name].[hash].[ext]",
           limit: 10000
         }
       },
       {
-        test: /.*\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|ico|webp)$/i,
+        test: /.*\.(eot|woff|woff2|ttf|svg|png|jpg|jpeg|gif|ico|webp)$/i,
         use: [
           {
             loader: "url-loader",

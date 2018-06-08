@@ -923,6 +923,41 @@ Maurio@0.0.33:
     slick-carousel "^1.8.1"
     webfontloader "^1.6.28"
 
+MaurioP@0.0.13:
+  version "0.0.13"
+  resolved "http://vidanueva.com.ar:4873/MaurioP/-/MaurioP-0.0.13.tgz#aa1d710652aa13034cfffb5272f4044dd5a53ace"
+  dependencies:
+    "@material-ui/core" "^1.0.0-rc.0"
+    "@material-ui/icons" "^1.0.0-beta.42"
+    airbnb-prop-types "^2.8.1"
+    autosuggest-highlight "^3.1.1"
+    classnames "^2.2.5"
+    consolidated-events "^1.1.1"
+    is-touch-device "^1.0.1"
+    lodash "^4.1.1"
+    material-ui "^1.0.0-beta.38"
+    moment-duration-format "^2.2.2"
+    object.assign "^4.1.0"
+    object.values "^1.0.4"
+    prop-types "^15.6.0"
+    react-addons-shallow-compare "^15.6.2"
+    react-autosuggest "^9.3.4"
+    react-component-queries "^2.3.0"
+    react-dates "^16.5.0"
+    react-google-maps "^9.4.5"
+    react-icons "^2.2.7"
+    react-moment-proptypes "^1.5.0"
+    react-portal "^4.1.2"
+    react-router-dom "^4.2.2"
+    react-sizeme "^2.4.2"
+    react-slick "^0.23.1"
+    react-swipeable-views "^0.12.13"
+    react-with-styles "^3.1.0"
+    react-with-styles-interface-css "^4.0.1"
+    rheostat "^2.2.0"
+    slick-carousel "^1.8.1"
+    webfontloader "^1.6.28"
+
 abbrev@1:
   version "1.1.1"
   resolved "http://vidanueva.com.ar:4873/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -6104,7 +6139,7 @@ markerwithlabel@^2.0.1:
   version "2.0.1"
   resolved "http://vidanueva.com.ar:4873/markerwithlabel/-/markerwithlabel-2.0.1.tgz#822f4eb68c488c2509c5ebdb75982eb84a856096"
 
-material-ui@^1.0.0-beta.38:
+material-ui@1.0.0-beta.47, material-ui@^1.0.0-beta.38:
   version "1.0.0-beta.47"
   resolved "http://vidanueva.com.ar:4873/material-ui/-/material-ui-1.0.0-beta.47.tgz#5deb97dc3e694299992d3c3cacb44051f8bc2166"
   dependencies:
@@ -7879,7 +7914,7 @@ react-sizeme@^2.4.2:
     lodash.debounce "^4.0.8"
     lodash.throttle "^4.1.1"
 
-react-slick@0.23.1, react-slick@^0.23.1:
+react-slick@^0.23.1:
   version "0.23.1"
   resolved "http://vidanueva.com.ar:4873/react-slick/-/react-slick-0.23.1.tgz#15791c4107f0ba3a5688d5bd97b7b7ceaa0dd181"
   dependencies:
@@ -7955,7 +7990,7 @@ react-with-styles-interface-aphrodite@5.0.0:
     object.entries "^1.0.4"
     rtl-css-js "^1.8.0"
 
-react-with-styles-interface-css@^4.0.1:
+react-with-styles-interface-css@4.0.1, react-with-styles-interface-css@^4.0.1:
   version "4.0.1"
   resolved "http://vidanueva.com.ar:4873/react-with-styles-interface-css/-/react-with-styles-interface-css-4.0.1.tgz#79d0a40bae388e11f15362d35aa52e8917982db0"
   dependencies:
@@ -8415,6 +8450,13 @@ rework@^1.0.1:
     convert-source-map "^0.3.3"
     css "^2.0.0"
 
+rheostat@^2.2.0:
+  version "2.2.0"
+  resolved "http://vidanueva.com.ar:4873/rheostat/-/rheostat-2.2.0.tgz#d6b388e21f9c6bf5753a8e9518a8eea3467287d2"
+  dependencies:
+    object.assign "^4.1.0"
+    prop-types "^15.6.0"
+
 right-align@^0.1.1:
   version "0.1.3"
   resolved "http://vidanueva.com.ar:4873/right-align/-/right-align-0.1.3.tgz#61339b722fe6a3515689210d24e14c96148613ef"
@@ -8699,7 +8741,7 @@ slice-ansi@0.0.4:
   version "0.0.4"
   resolved "http://vidanueva.com.ar:4873/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
 
-slick-carousel@1.8.1, slick-carousel@^1.8.1:
+slick-carousel@^1.8.1:
   version "1.8.1"
   resolved "http://vidanueva.com.ar:4873/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
 
