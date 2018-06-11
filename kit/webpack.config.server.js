@@ -145,14 +145,14 @@ const config = {
       "process.env": {
         NODE_ENV: JSON.stringify(NODE_ENV)
       }
-    }),
-    new ManifestPlugin({
-      fileName: "server-manifest.json",
-      publicPath: PUBLIC_PATH
-    }),
-    new StatsWebpackPlugin(`server-stats.json`, {
-      chunkModules: true
     })
+    // new ManifestPlugin({
+    //   fileName: "server-manifest.json",
+    //   publicPath: PUBLIC_PATH
+    // })
+    // new StatsWebpackPlugin(`server-stats.json`, {
+    //   chunkModules: true
+    // })
   ],
   target: "node",
   node: {

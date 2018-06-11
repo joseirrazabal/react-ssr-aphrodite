@@ -211,11 +211,11 @@ const config = {
         NODE_ENV: JSON.stringify(NODE_ENV)
       }
     }),
-    new ManifestPlugin({
-      fileName: "client-manifest.json",
-      publicPath: PUBLIC_PATH,
-      filter: ({ path: filePath }) => !filePath.endsWith(".map.js")
-    }),
+    // new ManifestPlugin({
+    //   fileName: "client-manifest.json",
+    //   publicPath: PUBLIC_PATH,
+    //   filter: ({ path: filePath }) => !filePath.endsWith(".map.js")
+    // }),
     new StatsWebpackPlugin(`client-stats.json`, {
       chunkModules: true
     }),
