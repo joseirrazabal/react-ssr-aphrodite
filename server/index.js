@@ -2,114 +2,35 @@ import React from "react";
 import { renderToString, renderToStaticMarkup } from "react-dom/server";
 import Helmet from "react-helmet";
 import { StyleSheetServer } from "aphrodite";
-import { compose } from "redux";
 
 import Html from "./html";
 import App from "../src";
 
-function flatten(arr) {
-  return [].concat.apply([], arr);
-}
-
-function uniq(arr) {
-  return [...new Set(arr)];
-}
-
-function isTruthy(val) {
-  return !!val;
-}
-
-const flattenUniq = compose(
-  uniq,
-  flatten
-);
-
-function fetchComponentData(renderProps, store) {
-  const requests = renderProps.components.filter(isTruthy).map(component => {
-    // Handle `connect`ed components.
-    if (component.WrappedComponent) {
-      component = component.WrappedComponent;
+function getCss({ assetsByChunkName }) {
+  var items = [];
+  for (let item in assetsByChunkName) {
+    let js = [assetsByChunkName[item]].find(asset => /\.css$/.test(asset));
+    if (js) {
+      items.push(js);
     }
-    if (component.fetchData) {
-      const { query, params, history } = renderProps;
-      return (
-        component
-          .fetchData({
-            dispatch: store.dispatch,
-            query,
-            params,
-            history
-          })
-          // Make sure promise always successfully resolves
-          .catch(() => {})
-      );
+  }
+  return items;
+}
+
+function getJs({ assetsByChunkName }) {
+  var items = [];
+  for (let item in assetsByChunkName) {
+    let js = [assetsByChunkName[item]].find(asset => /\.js$/.test(asset));
+    if (js) {
+      items.push(js);
     }
-  });
-
-  return Promise.all(requests);
-}
-
-function isNotFound(renderProps) {
-  return (
-    !renderProps ||
-    renderProps.components.some(component => component === NotFoundComponent)
-  );
-}
-
-function getJsByChunkName(name, { assetsByChunkName }) {
-  let assets = assetsByChunkName[name];
-  if (!Array.isArray(assets)) {
-    assets = [assets];
   }
-  return assets.find(asset => /\.js$/.test(asset));
-}
-
-function getJsByModuleIds(moduleIds, { modulesById, chunksById }) {
-  const chunkIds = flatten(
-    moduleIds.map(id => {
-      const clientModule = modulesById[id];
-      if (!clientModule) {
-        throw new Error(`${id} not found in client stats`);
-      }
-      return clientModule.chunks;
-    })
-  );
-  return flattenUniq(
-    chunkIds.map(id => {
-      return chunksById[id].files
-        .filter(file => /\.js$/.test(file))
-        .filter(file => !/\.hot-update\.js$/.test(file));
-    })
-  );
-}
-
-function getCssByChunkName(name, { assetsByChunkName }) {
-  let assets = assetsByChunkName[name];
-  if (!Array.isArray(assets)) {
-    assets = [assets];
-  }
-  return assets.find(asset => /\.css$/.test(asset));
-}
-
-function getJs(moduleIds, stats) {
-  return [
-    getJsByChunkName("vendors", stats),
-    ...getJsByModuleIds(moduleIds, stats),
-    getJsByChunkName("main", stats)
-  ].filter(isTruthy);
-}
-
-function getCss(stats) {
-  return [
-    getCssByChunkName("main", stats),
-    getCssByChunkName("vendors", stats)
-  ].filter(isTruthy);
+  return items;
 }
 
 function render(stats) {
-  // const markup = renderToString(<App />);
-  const css2 = getCss(stats);
-  const js = getJs([], stats);
+  const cssFiles = getCss(stats);
+  const js = getJs(stats);
   const head = Helmet.rewind();
 
   var { html, css } = StyleSheetServer.renderStatic(() => {
@@ -120,7 +41,7 @@ function render(stats) {
     <Html
       js={js}
       styles={css}
-      css={css2}
+      css={cssFiles}
       html={html}
       head={head}
       initialState={{}}
@@ -134,7 +55,6 @@ function render(stats) {
  * @return {function}   middleware function
  */
 export default ({ clientStats }) => {
-  // Build stats maps for quicker lookups.
   const modulesById = clientStats.modules.reduce((modules, mod) => {
     modules[mod.id] = mod;
     return modules;

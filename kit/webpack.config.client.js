@@ -5,10 +5,10 @@ const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StatsWebpackPlugin = require("stats-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-const ManifestPlugin = require("webpack-manifest-plugin");
+// const ManifestPlugin = require("webpack-manifest-plugin");
 const jsonStableStringify = require("json-stable-stringify");
 const xxHash = require("xxhashjs");
-const CircularDependencyPlugin = require("circular-dependency-plugin");
+// const CircularDependencyPlugin = require("circular-dependency-plugin");
 const notifier = require("node-notifier");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
@@ -224,10 +224,10 @@ const config = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
 
-    new CircularDependencyPlugin({
-      exclude: /node_modules/,
-      failOnError: true
-    }),
+    // new CircularDependencyPlugin({
+    //   exclude: /node_modules/,
+    //   failOnError: true
+    // }),
     new MiniCssExtractPlugin({
       filename: !IS_PRODUCTION ? "[name].css" : "[name].[hash].css",
       chunkFilename: !IS_PRODUCTION ? "[id].css" : "[id].[hash].css"
