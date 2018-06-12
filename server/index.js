@@ -2,6 +2,7 @@ import React from "react";
 import { renderToString, renderToStaticMarkup } from "react-dom/server";
 import Helmet from "react-helmet";
 import { StyleSheetServer } from "aphrodite";
+import StaticRouter from "react-router-dom/StaticRouter";
 
 import Html from "./html";
 import App from "../src";
@@ -9,7 +10,11 @@ import App from "../src";
 function getCss({ assetsByChunkName }) {
   var items = [];
   for (let item in assetsByChunkName) {
-    let js = [assetsByChunkName[item]].find(asset => /\.css$/.test(asset));
+    let assets = assetsByChunkName[item];
+    if (!Array.isArray(assets)) {
+      assets = [assets];
+    }
+    let js = assets.find(asset => /\.css$/.test(asset));
     if (js) {
       items.push(js);
     }
@@ -20,7 +25,11 @@ function getCss({ assetsByChunkName }) {
 function getJs({ assetsByChunkName }) {
   var items = [];
   for (let item in assetsByChunkName) {
-    let js = [assetsByChunkName[item]].find(asset => /\.js$/.test(asset));
+    let assets = assetsByChunkName[item];
+    if (!Array.isArray(assets)) {
+      assets = [assets];
+    }
+    let js = assets.find(asset => /\.js$/.test(asset));
     if (js) {
       items.push(js);
     }
@@ -28,13 +37,17 @@ function getJs({ assetsByChunkName }) {
   return items;
 }
 
-function render(stats) {
+function render(stats, url) {
   const cssFiles = getCss(stats);
   const js = getJs(stats);
   const head = Helmet.rewind();
 
   var { html, css } = StyleSheetServer.renderStatic(() => {
-    return renderToString(<App />);
+    return renderToString(
+      <StaticRouter location={url} context={{}}>
+        <App />
+      </StaticRouter>
+    );
   });
 
   return renderToStaticMarkup(
@@ -75,11 +88,14 @@ export default ({ clientStats }) => {
 
     let html;
     try {
-      html = render({
-        modulesById,
-        chunksById,
-        assetsByChunkName
-      });
+      html = render(
+        {
+          modulesById,
+          chunksById,
+          assetsByChunkName
+        },
+        url
+      );
     } catch (ex) {
       return next(ex);
     }

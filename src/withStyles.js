@@ -3,14 +3,15 @@ import aphroditeInterface from "react-with-styles-interface-aphrodite";
 import { css, withStyles } from "react-with-styles";
 import { createMuiTheme } from "material-ui/styles";
 
-import "MaurioP/initialize";
+import "Maurio/initialize";
+// import "react-dates/initialize";
 
-import MyTheme from "MaurioP/lib/theme/DefaultTheme";
+import MyTheme from "Maurio/lib/theme/DefaultTheme";
 
-ThemedStyleSheet.registerInterface(aphroditeInterface);
 ThemedStyleSheet.registerTheme(MyTheme);
+ThemedStyleSheet.registerInterface(aphroditeInterface);
 
-import "MaurioP/css/storybook.scss";
+import "Maurio/css/storybook.scss";
 
 const muiThemeMaterial = createMuiTheme({
   palette: {
