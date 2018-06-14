@@ -162,10 +162,11 @@ const config = {
     process: false
   },
   devtool: !IS_PRODUCTION ? "eval" : undefined,
-  bail: IS_PRODUCTION,
-  externals: fs.readdirSync("node_modules").reduce((externals, mod) => {
-    externals[mod] = `commonjs ${mod}`;
-    return externals;
-  }, {})
+  bail: IS_PRODUCTION
+  // externals: [nodeExternals()]
+  // externals: fs.readdirSync("node_modules").reduce((externals, mod) => {
+  //   externals[mod] = `commonjs ${mod}`;
+  //   return externals;
+  // }, {})
 };
 module.exports = config;

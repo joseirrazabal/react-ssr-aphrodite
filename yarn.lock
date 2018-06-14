@@ -653,7 +653,7 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@material-ui/core@1.2.0", "@material-ui/core@^1.0.0-rc.0":
+"@material-ui/core@^1.0.0-rc.0":
   version "1.2.0"
   resolved "http://vidanueva.com.ar:4873/@material-ui%2fcore/-/core-1.2.0.tgz#ec372fd44f949faa604c4ccd4b7ee0bc5e08ac8c"
   dependencies:
@@ -889,13 +889,14 @@
     "@webassemblyjs/wast-parser" "1.5.10"
     long "^3.2.0"
 
-Maurio@0.0.51:
-  version "0.0.51"
-  resolved "http://vidanueva.com.ar:4873/Maurio/-/Maurio-0.0.51.tgz#4d4c6b9a545a54fa3da82d71d9cbee6350e7eb74"
+Maurio@0.0.62:
+  version "0.0.62"
+  resolved "http://vidanueva.com.ar:4873/Maurio/-/Maurio-0.0.62.tgz#21e7111ea7c1ac0d5daf35b10e888ef48037de76"
   dependencies:
     "@material-ui/core" "^1.0.0-rc.0"
     "@material-ui/icons" "^1.0.0-beta.42"
     airbnb-prop-types "^2.8.1"
+    aphrodite "^2.2.2"
     autosuggest-highlight "^3.1.1"
     classnames "^2.2.5"
     consolidated-events "^1.1.1"
@@ -917,47 +918,19 @@ Maurio@0.0.51:
     react-router-dom "^4.2.2"
     react-sizeme "^2.4.2"
     react-slick "^0.23.1"
+    react-sticky "^6.0.1"
     react-swipeable-views "^0.12.13"
-    react-with-styles "^3.1.0"
+    react-with-styles "^3.2.0"
+    react-with-styles-interface-aphrodite "^5.0.0"
     react-with-styles-interface-css "^4.0.1"
+    react-with-styles-interface-css-compiler "^1.1.2"
     rheostat "^2.2.0"
     slick-carousel "^1.8.1"
     webfontloader "^1.6.28"
 
-MaurioP@0.0.13:
-  version "0.0.13"
-  resolved "http://vidanueva.com.ar:4873/MaurioP/-/MaurioP-0.0.13.tgz#aa1d710652aa13034cfffb5272f4044dd5a53ace"
-  dependencies:
-    "@material-ui/core" "^1.0.0-rc.0"
-    "@material-ui/icons" "^1.0.0-beta.42"
-    airbnb-prop-types "^2.8.1"
-    autosuggest-highlight "^3.1.1"
-    classnames "^2.2.5"
-    consolidated-events "^1.1.1"
-    is-touch-device "^1.0.1"
-    lodash "^4.1.1"
-    material-ui "^1.0.0-beta.38"
-    moment-duration-format "^2.2.2"
-    object.assign "^4.1.0"
-    object.values "^1.0.4"
-    prop-types "^15.6.0"
-    react-addons-shallow-compare "^15.6.2"
-    react-autosuggest "^9.3.4"
-    react-component-queries "^2.3.0"
-    react-dates "^16.5.0"
-    react-google-maps "^9.4.5"
-    react-icons "^2.2.7"
-    react-moment-proptypes "^1.5.0"
-    react-portal "^4.1.2"
-    react-router-dom "^4.2.2"
-    react-sizeme "^2.4.2"
-    react-slick "^0.23.1"
-    react-swipeable-views "^0.12.13"
-    react-with-styles "^3.1.0"
-    react-with-styles-interface-css "^4.0.1"
-    rheostat "^2.2.0"
-    slick-carousel "^1.8.1"
-    webfontloader "^1.6.28"
+abab@^1.0.4:
+  version "1.0.4"
+  resolved "http://vidanueva.com.ar:4873/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
 
 abbrev@1:
   version "1.1.1"
@@ -976,7 +949,13 @@ acorn-dynamic-import@^3.0.0:
   dependencies:
     acorn "^5.0.0"
 
-acorn@^5.0.0:
+acorn-globals@^4.1.0:
+  version "4.1.0"
+  resolved "http://vidanueva.com.ar:4873/acorn-globals/-/acorn-globals-4.1.0.tgz#ab716025dbe17c54d3ef81d32ece2b2d99fe2538"
+  dependencies:
+    acorn "^5.0.0"
+
+acorn@^5.0.0, acorn@^5.3.0:
   version "5.6.2"
   resolved "http://vidanueva.com.ar:4873/acorn/-/acorn-5.6.2.tgz#b1da1d7be2ac1b4a327fb9eab851702c5045b4e7"
 
@@ -1091,20 +1070,20 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-aphrodite@2.2.0:
-  version "2.2.0"
-  resolved "http://vidanueva.com.ar:4873/aphrodite/-/aphrodite-2.2.0.tgz#3540afe0af1573872bbf15d08e24698e649a4374"
-  dependencies:
-    asap "^2.0.3"
-    inline-style-prefixer "^4.0.0"
-    string-hash "^1.1.3"
-
-aphrodite@^1.2.5:
+aphrodite@^1.2.4, aphrodite@^1.2.5:
   version "1.2.5"
   resolved "http://vidanueva.com.ar:4873/aphrodite/-/aphrodite-1.2.5.tgz#8358c36c80bb03aee9b97165aaa70186225b4983"
   dependencies:
     asap "^2.0.3"
     inline-style-prefixer "^3.0.1"
+    string-hash "^1.1.3"
+
+aphrodite@^2.2.2:
+  version "2.2.2"
+  resolved "http://vidanueva.com.ar:4873/aphrodite/-/aphrodite-2.2.2.tgz#1292a6c67f5c35f8855f3f61475fe530d903bdd1"
+  dependencies:
+    asap "^2.0.3"
+    inline-style-prefixer "^4.0.0"
     string-hash "^1.1.3"
 
 app-root-dir@1.0.2:
@@ -1156,6 +1135,10 @@ array-differ@^1.0.0:
   version "1.0.0"
   resolved "http://vidanueva.com.ar:4873/array-differ/-/array-differ-1.0.0.tgz#eff52e3758249d33be402b8bb8e564bb2b5d4031"
 
+array-equal@^1.0.0:
+  version "1.0.0"
+  resolved "http://vidanueva.com.ar:4873/array-equal/-/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
+
 array-find-index@^1.0.1:
   version "1.0.2"
   resolved "http://vidanueva.com.ar:4873/array-find-index/-/array-find-index-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
@@ -1192,6 +1175,14 @@ array.prototype.find@^2.0.4:
   dependencies:
     define-properties "^1.1.2"
     es-abstract "^1.7.0"
+
+array.prototype.flat@^1.2.1:
+  version "1.2.1"
+  resolved "http://vidanueva.com.ar:4873/array.prototype.flat/-/array.prototype.flat-1.2.1.tgz#812db8f02cad24d3fab65dd67eabe3b8903494a4"
+  dependencies:
+    define-properties "^1.1.2"
+    es-abstract "^1.10.0"
+    function-bind "^1.1.1"
 
 array.prototype.flatten@^1.2.1:
   version "1.2.1"
@@ -1258,6 +1249,10 @@ async-each@^1.0.0:
 async-foreach@^0.1.3:
   version "0.1.3"
   resolved "http://vidanueva.com.ar:4873/async-foreach/-/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
+
+async-limiter@~1.0.0:
+  version "1.0.0"
+  resolved "http://vidanueva.com.ar:4873/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
 
 async@^1.5.0:
   version "1.5.2"
@@ -2128,6 +2123,10 @@ brorand@^1.0.1:
   version "1.1.0"
   resolved "http://vidanueva.com.ar:4873/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
 
+browser-process-hrtime@^0.1.2:
+  version "0.1.2"
+  resolved "http://vidanueva.com.ar:4873/browser-process-hrtime/-/browser-process-hrtime-0.1.2.tgz#425d68a58d3447f02a04aa894187fce8af8b7b8e"
+
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
   resolved "http://vidanueva.com.ar:4873/browserify-aes/-/browserify-aes-1.2.0.tgz#326734642f403dabc3003209853bb70ad428ef48"
@@ -2473,6 +2472,12 @@ class-utils@^0.3.5:
 classnames@^2.2.5:
   version "2.2.5"
   resolved "http://vidanueva.com.ar:4873/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
+clean-css@^4.1.9:
+  version "4.1.11"
+  resolved "http://vidanueva.com.ar:4873/clean-css/-/clean-css-4.1.11.tgz#2ecdf145aba38f54740f26cefd0ff3e03e125d6a"
+  dependencies:
+    source-map "0.5.x"
 
 clean-webpack-plugin@0.1.19:
   version "0.1.19"
@@ -3036,6 +3041,16 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
+cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
+  version "0.3.2"
+  resolved "http://vidanueva.com.ar:4873/cssom/-/cssom-0.3.2.tgz#b8036170c79f07a90ff2f16e22284027a243848b"
+
+"cssstyle@>= 0.3.1 < 0.4.0":
+  version "0.3.1"
+  resolved "http://vidanueva.com.ar:4873/cssstyle/-/cssstyle-0.3.1.tgz#6da9b4cff1bc5d716e6e5fe8e04fcb1b50a49adf"
+  dependencies:
+    cssom "0.3.x"
+
 csstype@^2.0.0, csstype@^2.2.0, csstype@^2.5.2:
   version "2.5.3"
   resolved "http://vidanueva.com.ar:4873/csstype/-/csstype-2.5.3.tgz#2504152e6e1cc59b32098b7f5d6a63f16294c1f7"
@@ -3077,6 +3092,14 @@ dashdash@^1.12.0:
   resolved "http://vidanueva.com.ar:4873/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
   dependencies:
     assert-plus "^1.0.0"
+
+data-urls@^1.0.0:
+  version "1.0.0"
+  resolved "http://vidanueva.com.ar:4873/data-urls/-/data-urls-1.0.0.tgz#24802de4e81c298ea8a9388bb0d8e461c774684f"
+  dependencies:
+    abab "^1.0.4"
+    whatwg-mimetype "^2.0.0"
+    whatwg-url "^6.4.0"
 
 date-fns@^1.27.2:
   version "1.29.0"
@@ -3244,6 +3267,10 @@ deep-extend@^0.6.0:
   version "0.6.0"
   resolved "http://vidanueva.com.ar:4873/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
 
+deep-is@~0.1.3:
+  version "0.1.3"
+  resolved "http://vidanueva.com.ar:4873/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
+
 deepmerge@^1.5.1, deepmerge@^1.5.2:
   version "1.5.2"
   resolved "http://vidanueva.com.ar:4873/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
@@ -3376,6 +3403,12 @@ domelementtype@1:
 domelementtype@~1.1.1:
   version "1.1.3"
   resolved "http://vidanueva.com.ar:4873/domelementtype/-/domelementtype-1.1.3.tgz#bd28773e2642881aec51544924299c5cd822185b"
+
+domexception@^1.0.0:
+  version "1.0.1"
+  resolved "http://vidanueva.com.ar:4873/domexception/-/domexception-1.0.1.tgz#937442644ca6a31261ef36e3ec677fe805582c90"
+  dependencies:
+    webidl-conversions "^4.0.2"
 
 domutils@1.5.1:
   version "1.5.1"
@@ -3610,6 +3643,17 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "http://vidanueva.com.ar:4873/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
+escodegen@^1.9.0:
+  version "1.10.0"
+  resolved "http://vidanueva.com.ar:4873/escodegen/-/escodegen-1.10.0.tgz#f647395de22519fbd0d928ffcf1d17e0dec2603e"
+  dependencies:
+    esprima "^3.1.3"
+    estraverse "^4.2.0"
+    esutils "^2.0.2"
+    optionator "^0.8.1"
+  optionalDependencies:
+    source-map "~0.6.1"
+
 eslint-scope@^3.7.1:
   version "3.7.1"
   resolved "http://vidanueva.com.ar:4873/eslint-scope/-/eslint-scope-3.7.1.tgz#3d63c3edfda02e06e01a452ad88caacc7cdcb6e8"
@@ -3621,6 +3665,10 @@ esprima@^2.6.0:
   version "2.7.3"
   resolved "http://vidanueva.com.ar:4873/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
 
+esprima@^3.1.3:
+  version "3.1.3"
+  resolved "http://vidanueva.com.ar:4873/esprima/-/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"
+
 esprima@^4.0.0, esprima@~4.0.0:
   version "4.0.0"
   resolved "http://vidanueva.com.ar:4873/esprima/-/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
@@ -3631,7 +3679,7 @@ esrecurse@^4.1.0:
   dependencies:
     estraverse "^4.1.0"
 
-estraverse@^4.1.0, estraverse@^4.1.1:
+estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.2.0"
   resolved "http://vidanueva.com.ar:4873/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
 
@@ -3890,7 +3938,7 @@ fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
   resolved "http://vidanueva.com.ar:4873/fast-json-stable-stringify/-/fast-json-stable-stringify-2.0.0.tgz#d5142c0caee6b1189f87d3a76111064f86c8bbf2"
 
-fast-levenshtein@^2.0.6:
+fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "http://vidanueva.com.ar:4873/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
@@ -4744,6 +4792,12 @@ html-comment-regex@^1.1.0:
   version "1.1.1"
   resolved "http://vidanueva.com.ar:4873/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
 
+html-encoding-sniffer@^1.0.2:
+  version "1.0.2"
+  resolved "http://vidanueva.com.ar:4873/html-encoding-sniffer/-/html-encoding-sniffer-1.0.2.tgz#e70d84b94da53aa375e11fe3a351be6642ca46f8"
+  dependencies:
+    whatwg-encoding "^1.0.1"
+
 html-entities@^1.2.0:
   version "1.2.1"
   resolved "http://vidanueva.com.ar:4873/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
@@ -5501,6 +5555,37 @@ jscodeshift@^0.5.0:
     temp "^0.8.1"
     write-file-atomic "^1.2.0"
 
+jsdom@^11.3.0:
+  version "11.11.0"
+  resolved "http://vidanueva.com.ar:4873/jsdom/-/jsdom-11.11.0.tgz#df486efad41aee96c59ad7a190e2449c7eb1110e"
+  dependencies:
+    abab "^1.0.4"
+    acorn "^5.3.0"
+    acorn-globals "^4.1.0"
+    array-equal "^1.0.0"
+    cssom ">= 0.3.2 < 0.4.0"
+    cssstyle ">= 0.3.1 < 0.4.0"
+    data-urls "^1.0.0"
+    domexception "^1.0.0"
+    escodegen "^1.9.0"
+    html-encoding-sniffer "^1.0.2"
+    left-pad "^1.2.0"
+    nwsapi "^2.0.0"
+    parse5 "4.0.0"
+    pn "^1.1.0"
+    request "^2.83.0"
+    request-promise-native "^1.0.5"
+    sax "^1.2.4"
+    symbol-tree "^3.2.2"
+    tough-cookie "^2.3.3"
+    w3c-hr-time "^1.0.1"
+    webidl-conversions "^4.0.2"
+    whatwg-encoding "^1.0.3"
+    whatwg-mimetype "^2.1.0"
+    whatwg-url "^6.4.1"
+    ws "^4.0.0"
+    xml-name-validator "^3.0.0"
+
 jsesc@^1.3.0:
   version "1.3.0"
   resolved "http://vidanueva.com.ar:4873/jsesc/-/jsesc-1.3.0.tgz#46c3fec8c1892b12b0833db9bc7622176dbab34b"
@@ -5690,6 +5775,17 @@ lcid@^1.0.0:
 leb@^0.3.0:
   version "0.3.0"
   resolved "http://vidanueva.com.ar:4873/leb/-/leb-0.3.0.tgz#32bee9fad168328d6aea8522d833f4180eed1da3"
+
+left-pad@^1.2.0:
+  version "1.3.0"
+  resolved "http://vidanueva.com.ar:4873/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
+
+levn@~0.3.0:
+  version "0.3.0"
+  resolved "http://vidanueva.com.ar:4873/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
+  dependencies:
+    prelude-ls "~1.1.2"
+    type-check "~0.3.2"
 
 listr-silent-renderer@^1.1.1:
   version "1.1.1"
@@ -5904,6 +6000,10 @@ lodash.restparam@^3.0.0:
   version "3.6.1"
   resolved "http://vidanueva.com.ar:4873/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
 
+lodash.sortby@^4.7.0:
+  version "4.7.0"
+  resolved "http://vidanueva.com.ar:4873/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
+
 lodash.tail@^4.1.1:
   version "4.1.1"
   resolved "http://vidanueva.com.ar:4873/lodash.tail/-/lodash.tail-4.1.1.tgz#d2333a36d9e7717c8ad2f7cacafec7c32b444664"
@@ -6051,7 +6151,7 @@ markerwithlabel@^2.0.1:
   version "2.0.1"
   resolved "http://vidanueva.com.ar:4873/markerwithlabel/-/markerwithlabel-2.0.1.tgz#822f4eb68c488c2509c5ebdb75982eb84a856096"
 
-material-ui@1.0.0-beta.47, material-ui@^1.0.0-beta.38:
+material-ui@^1.0.0-beta.38:
   version "1.0.0-beta.47"
   resolved "http://vidanueva.com.ar:4873/material-ui/-/material-ui-1.0.0-beta.47.tgz#5deb97dc3e694299992d3c3cacb44051f8bc2166"
   dependencies:
@@ -6656,6 +6756,10 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "http://vidanueva.com.ar:4873/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
+nwsapi@^2.0.0:
+  version "2.0.3"
+  resolved "http://vidanueva.com.ar:4873/nwsapi/-/nwsapi-2.0.3.tgz#3f4010d6c943f34018d3dfb5f2fbc0de90476959"
+
 oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
   resolved "http://vidanueva.com.ar:4873/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
@@ -6770,6 +6874,17 @@ onetime@^2.0.0:
   resolved "http://vidanueva.com.ar:4873/onetime/-/onetime-2.0.1.tgz#067428230fd67443b2794b22bba528b6867962d4"
   dependencies:
     mimic-fn "^1.0.0"
+
+optionator@^0.8.1:
+  version "0.8.2"
+  resolved "http://vidanueva.com.ar:4873/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
+  dependencies:
+    deep-is "~0.1.3"
+    fast-levenshtein "~2.0.4"
+    levn "~0.3.0"
+    prelude-ls "~1.1.2"
+    type-check "~0.3.2"
+    wordwrap "~1.0.0"
 
 optipng-bin@^3.0.0:
   version "3.1.4"
@@ -6966,6 +7081,10 @@ parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "http://vidanueva.com.ar:4873/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
 
+parse5@4.0.0:
+  version "4.0.0"
+  resolved "http://vidanueva.com.ar:4873/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
+
 parseurl@~1.3.2:
   version "1.3.2"
   resolved "http://vidanueva.com.ar:4873/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
@@ -7075,6 +7194,10 @@ pkg-dir@^2.0.0:
   resolved "http://vidanueva.com.ar:4873/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
   dependencies:
     find-up "^2.1.0"
+
+pn@^1.1.0:
+  version "1.1.0"
+  resolved "http://vidanueva.com.ar:4873/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
 pngquant-bin@^4.0.0:
   version "4.0.0"
@@ -7376,6 +7499,10 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.22:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
+prelude-ls@~1.1.2:
+  version "1.1.2"
+  resolved "http://vidanueva.com.ar:4873/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
+
 prepend-http@^1.0.0, prepend-http@^1.0.1:
   version "1.0.4"
   resolved "http://vidanueva.com.ar:4873/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
@@ -7456,6 +7583,10 @@ pseudomap@^1.0.2:
   version "1.0.2"
   resolved "http://vidanueva.com.ar:4873/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
+psl@^1.1.24:
+  version "1.1.28"
+  resolved "http://vidanueva.com.ar:4873/psl/-/psl-1.1.28.tgz#4fb6ceb08a1e2214d4fd4de0ca22dae13740bc7b"
+
 public-encrypt@^4.0.0:
   version "4.0.2"
   resolved "http://vidanueva.com.ar:4873/public-encrypt/-/public-encrypt-4.0.2.tgz#46eb9107206bf73489f8b85b69d91334c6610994"
@@ -7531,6 +7662,12 @@ querystring-es3@^0.2.0:
 querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "http://vidanueva.com.ar:4873/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
+
+raf@^3.3.0:
+  version "3.4.0"
+  resolved "http://vidanueva.com.ar:4873/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
+  dependencies:
+    performance-now "^2.1.0"
 
 rafl@~1.2.1:
   version "1.2.2"
@@ -7803,6 +7940,13 @@ react-slick@^0.23.1:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
+react-sticky@^6.0.1:
+  version "6.0.2"
+  resolved "http://vidanueva.com.ar:4873/react-sticky/-/react-sticky-6.0.2.tgz#d301c1b5307649220dbc045fcbacd077885c5ede"
+  dependencies:
+    prop-types "^15.5.8"
+    raf "^3.3.0"
+
 react-swipeable-views-core@^0.12.11:
   version "0.12.11"
   resolved "http://vidanueva.com.ar:4873/react-swipeable-views-core/-/react-swipeable-views-core-0.12.11.tgz#3cf2b4daffbb36f9d69bd19bf5b2d5370b6b2c1b"
@@ -7859,7 +8003,7 @@ react-with-direction@^1.1.0:
     object.values "^1.0.4"
     prop-types "^15.6.0"
 
-react-with-styles-interface-aphrodite@5.0.0:
+react-with-styles-interface-aphrodite@5.0.0, react-with-styles-interface-aphrodite@^5.0.0:
   version "5.0.0"
   resolved "http://vidanueva.com.ar:4873/react-with-styles-interface-aphrodite/-/react-with-styles-interface-aphrodite-5.0.0.tgz#a2b80aca271f5877ec48e0641cee2cdeb2ca2b3c"
   dependencies:
@@ -7869,7 +8013,28 @@ react-with-styles-interface-aphrodite@5.0.0:
     object.entries "^1.0.4"
     rtl-css-js "^1.8.0"
 
-react-with-styles-interface-css@4.0.1, react-with-styles-interface-css@^4.0.1:
+react-with-styles-interface-css-compiler@^1.1.2:
+  version "1.1.2"
+  resolved "http://vidanueva.com.ar:4873/react-with-styles-interface-css-compiler/-/react-with-styles-interface-css-compiler-1.1.2.tgz#48aefe06d732aacda63de0b6540066795e9c3fe8"
+  dependencies:
+    aphrodite "^1.2.4"
+    babel-register "^6.26.0"
+    clean-css "^4.1.9"
+    global-cache "^1.2.1"
+    jsdom "^11.3.0"
+    object.entries "^1.0.4"
+    object.values "^1.0.4"
+    react-with-styles-interface-css "^4.0.0"
+
+react-with-styles-interface-css@^4.0.0:
+  version "4.0.2"
+  resolved "http://vidanueva.com.ar:4873/react-with-styles-interface-css/-/react-with-styles-interface-css-4.0.2.tgz#e30299a8d60663b87b8393664a63844d4e7dfd5c"
+  dependencies:
+    aphrodite "^1.2.5"
+    array.prototype.flat "^1.2.1"
+    global-cache "^1.2.1"
+
+react-with-styles-interface-css@^4.0.1:
   version "4.0.1"
   resolved "http://vidanueva.com.ar:4873/react-with-styles-interface-css/-/react-with-styles-interface-css-4.0.1.tgz#79d0a40bae388e11f15362d35aa52e8917982db0"
   dependencies:
@@ -7877,17 +8042,7 @@ react-with-styles-interface-css@4.0.1, react-with-styles-interface-css@^4.0.1:
     array.prototype.flatten "^1.2.1"
     global-cache "^1.2.1"
 
-react-with-styles@3.1.0:
-  version "3.1.0"
-  resolved "http://vidanueva.com.ar:4873/react-with-styles/-/react-with-styles-3.1.0.tgz#bf70a90cc7d54cbe866e5d6955bf9c21cf260d09"
-  dependencies:
-    deepmerge "^1.5.2"
-    global-cache "^1.2.1"
-    hoist-non-react-statics "^2.3.1"
-    prop-types "^15.6.0"
-    react-with-direction "^1.1.0"
-
-react-with-styles@^3.1.0:
+react-with-styles@^3.1.0, react-with-styles@^3.2.0:
   version "3.2.0"
   resolved "http://vidanueva.com.ar:4873/react-with-styles/-/react-with-styles-3.2.0.tgz#b3fb7c219e6288ce572ad32fddd463d55c395058"
   dependencies:
@@ -8172,7 +8327,21 @@ replace-ext@^1.0.0:
   version "1.0.0"
   resolved "http://vidanueva.com.ar:4873/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
 
-request@2:
+request-promise-core@1.1.1:
+  version "1.1.1"
+  resolved "http://vidanueva.com.ar:4873/request-promise-core/-/request-promise-core-1.1.1.tgz#3eee00b2c5aa83239cfb04c5700da36f81cd08b6"
+  dependencies:
+    lodash "^4.13.1"
+
+request-promise-native@^1.0.5:
+  version "1.0.5"
+  resolved "http://vidanueva.com.ar:4873/request-promise-native/-/request-promise-native-1.0.5.tgz#5281770f68e0c9719e5163fd3fab482215f4fda5"
+  dependencies:
+    request-promise-core "1.1.1"
+    stealthy-require "^1.1.0"
+    tough-cookie ">=2.3.3"
+
+request@2, request@^2.83.0:
   version "2.87.0"
   resolved "http://vidanueva.com.ar:4873/request/-/request-2.87.0.tgz#32f00235cd08d482b4d0d68db93a829c0ed5756e"
   dependencies:
@@ -8691,6 +8860,10 @@ source-map-url@^0.4.0:
   version "0.4.0"
   resolved "http://vidanueva.com.ar:4873/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
 
+source-map@0.5.x, source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7:
+  version "0.5.7"
+  resolved "http://vidanueva.com.ar:4873/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
+
 source-map@^0.1.38:
   version "0.1.43"
   resolved "http://vidanueva.com.ar:4873/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
@@ -8702,10 +8875,6 @@ source-map@^0.4.2:
   resolved "http://vidanueva.com.ar:4873/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
   dependencies:
     amdefine ">=0.0.4"
-
-source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7:
-  version "0.5.7"
-  resolved "http://vidanueva.com.ar:4873/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
 source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   version "0.6.1"
@@ -8814,6 +8983,10 @@ stdout-stream@^1.4.0:
   resolved "http://vidanueva.com.ar:4873/stdout-stream/-/stdout-stream-1.4.0.tgz#a2c7c8587e54d9427ea9edb3ac3f2cd522df378b"
   dependencies:
     readable-stream "^2.0.1"
+
+stealthy-require@^1.1.0:
+  version "1.1.1"
+  resolved "http://vidanueva.com.ar:4873/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
 
 stifle@^1.0.2:
   version "1.1.0"
@@ -9048,6 +9221,10 @@ symbol-observable@^1.0.4, symbol-observable@^1.1.0:
   version "1.2.0"
   resolved "http://vidanueva.com.ar:4873/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
+symbol-tree@^3.2.2:
+  version "3.2.2"
+  resolved "http://vidanueva.com.ar:4873/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
+
 tapable@^1.0.0:
   version "1.0.0"
   resolved "http://vidanueva.com.ar:4873/tapable/-/tapable-1.0.0.tgz#cbb639d9002eed9c6b5975eb20598d7936f1f9f2"
@@ -9219,11 +9396,24 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
+tough-cookie@>=2.3.3, tough-cookie@^2.3.3:
+  version "2.4.2"
+  resolved "http://vidanueva.com.ar:4873/tough-cookie/-/tough-cookie-2.4.2.tgz#aa9133154518b494efab98a58247bfc38818c00c"
+  dependencies:
+    psl "^1.1.24"
+    punycode "^1.4.1"
+
 tough-cookie@~2.3.0, tough-cookie@~2.3.3:
   version "2.3.4"
   resolved "http://vidanueva.com.ar:4873/tough-cookie/-/tough-cookie-2.3.4.tgz#ec60cee38ac675063ffc97a5c18970578ee83655"
   dependencies:
     punycode "^1.4.1"
+
+tr46@^1.0.1:
+  version "1.0.1"
+  resolved "http://vidanueva.com.ar:4873/tr46/-/tr46-1.0.1.tgz#a8b13fd6bfd2489519674ccde55ba3693b706d09"
+  dependencies:
+    punycode "^2.1.0"
 
 trim-newlines@^1.0.0:
   version "1.0.0"
@@ -9266,6 +9456,12 @@ tunnel-agent@^0.6.0:
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "http://vidanueva.com.ar:4873/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
+
+type-check@~0.3.2:
+  version "0.3.2"
+  resolved "http://vidanueva.com.ar:4873/type-check/-/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
+  dependencies:
+    prelude-ls "~1.1.2"
 
 type-is@~1.6.15, type-is@~1.6.16:
   version "1.6.16"
@@ -9608,6 +9804,12 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+w3c-hr-time@^1.0.1:
+  version "1.0.1"
+  resolved "http://vidanueva.com.ar:4873/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
+  dependencies:
+    browser-process-hrtime "^0.1.2"
+
 ware@^1.2.0:
   version "1.3.0"
   resolved "http://vidanueva.com.ar:4873/ware/-/ware-1.3.0.tgz#d1b14f39d2e2cb4ab8c4098f756fe4b164e473d4"
@@ -9637,6 +9839,10 @@ watchpack@^1.5.0:
 webfontloader@^1.6.28:
   version "1.6.28"
   resolved "http://vidanueva.com.ar:4873/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
+
+webidl-conversions@^4.0.2:
+  version "4.0.2"
+  resolved "http://vidanueva.com.ar:4873/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
 webpack-addons@^1.1.5:
   version "1.1.5"
@@ -9777,9 +9983,27 @@ webpack@4.11.1:
     watchpack "^1.5.0"
     webpack-sources "^1.0.1"
 
+whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
+  version "1.0.3"
+  resolved "http://vidanueva.com.ar:4873/whatwg-encoding/-/whatwg-encoding-1.0.3.tgz#57c235bc8657e914d24e1a397d3c82daee0a6ba3"
+  dependencies:
+    iconv-lite "0.4.19"
+
 whatwg-fetch@>=0.10.0:
   version "2.0.4"
   resolved "http://vidanueva.com.ar:4873/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
+
+whatwg-mimetype@^2.0.0, whatwg-mimetype@^2.1.0:
+  version "2.1.0"
+  resolved "http://vidanueva.com.ar:4873/whatwg-mimetype/-/whatwg-mimetype-2.1.0.tgz#f0f21d76cbba72362eb609dbed2a30cd17fcc7d4"
+
+whatwg-url@^6.4.0, whatwg-url@^6.4.1:
+  version "6.5.0"
+  resolved "http://vidanueva.com.ar:4873/whatwg-url/-/whatwg-url-6.5.0.tgz#f2df02bff176fd65070df74ad5ccbb5a199965a8"
+  dependencies:
+    lodash.sortby "^4.7.0"
+    tr46 "^1.0.1"
+    webidl-conversions "^4.0.2"
 
 whet.extend@~0.9.9:
   version "0.9.9"
@@ -9804,6 +10028,10 @@ wide-align@^1.1.0:
   resolved "http://vidanueva.com.ar:4873/wide-align/-/wide-align-1.1.3.tgz#ae074e6bdc0c14a431e804e624549c633b000457"
   dependencies:
     string-width "^1.0.2 || 2"
+
+wordwrap@~1.0.0:
+  version "1.0.0"
+  resolved "http://vidanueva.com.ar:4873/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
 
 worker-farm@^1.5.2:
   version "1.6.0"
@@ -9835,6 +10063,17 @@ write-file-atomic@^1.2.0:
     graceful-fs "^4.1.11"
     imurmurhash "^0.1.4"
     slide "^1.1.5"
+
+ws@^4.0.0:
+  version "4.1.0"
+  resolved "http://vidanueva.com.ar:4873/ws/-/ws-4.1.0.tgz#a979b5d7d4da68bf54efe0408967c324869a7289"
+  dependencies:
+    async-limiter "~1.0.0"
+    safe-buffer "~5.1.0"
+
+xml-name-validator@^3.0.0:
+  version "3.0.0"
+  resolved "http://vidanueva.com.ar:4873/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"

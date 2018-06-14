@@ -1,16 +1,19 @@
 import ThemedStyleSheet from "react-with-styles/lib/ThemedStyleSheet";
 import aphroditeInterface from "react-with-styles-interface-aphrodite";
 import { css, withStyles } from "react-with-styles";
-import { createMuiTheme } from "material-ui/styles";
-
-import "Maurio/initialize";
-// import "react-dates/initialize";
+import {
+  MuiThemeProvider,
+  createMuiTheme,
+  createGenerateClassName,
+  jssPreset
+} from "@material-ui/core/styles";
+import { create } from "jss";
 
 import MyTheme from "Maurio/lib/theme/DefaultTheme";
-
 ThemedStyleSheet.registerTheme(MyTheme);
 ThemedStyleSheet.registerInterface(aphroditeInterface);
 
+// import "Maurio/initialize";
 import "Maurio/css/storybook.scss";
 
 const muiThemeMaterial = createMuiTheme({
@@ -36,4 +39,18 @@ const muiThemeMaterial = createMuiTheme({
   }
 });
 
-export { css, withStyles, ThemedStyleSheet, muiThemeMaterial };
+const jss = create(jssPreset());
+const generateClassName = createGenerateClassName();
+// const generateClassName = createGenerateClassName({
+//   dangerouslyUseGlobalCSS: true,
+//   productionPrefix: "c"
+// });
+
+export {
+  css,
+  withStyles,
+  ThemedStyleSheet,
+  muiThemeMaterial,
+  generateClassName,
+  jss
+};

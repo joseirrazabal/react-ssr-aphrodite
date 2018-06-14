@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Html({ js, styles, css, html, head, initialState }) {
+function Html({ js, styles, css, html, head, initialState, material }) {
   return (
     <html lang="en">
       <head>
@@ -40,7 +40,8 @@ function Html({ js, styles, css, html, head, initialState }) {
         <meta name="theme-color" content="#ffffff" />
 
         {head.link.toComponent()}
-        <style>${styles.content}</style>
+        <style>{material}</style>
+        <style>{styles.content}</style>
         {css.map(css => <link key={css} rel="stylesheet" href={`/${css}`} />)}
       </head>
       <body>
@@ -58,6 +59,7 @@ function Html({ js, styles, css, html, head, initialState }) {
 
 Html.propTypes = {
   js: PropTypes.array.isRequired,
+  material: PropTypes.any,
   styles: PropTypes.object.isRequired,
   css: PropTypes.array.isRequired,
   html: PropTypes.string,

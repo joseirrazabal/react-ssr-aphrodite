@@ -13,10 +13,7 @@
         "@babel/react",
         "@babel/stage-3"
       ],
-      "plugins": [
-        "@babel/transform-react-jsx-source",
-        "react-hot-loader/babel"
-      ]
+      "plugins": ["@babel/transform-react-jsx-source", "react-hot-loader/babel"]
     },
     "production": {
       "presets": [
@@ -24,8 +21,8 @@
           "@babel/env",
           {
             "modules": false,
-            "useBuiltIns": "entry",
-            "uglify": "true"
+            "useBuiltIns": "entry"
+            // "uglify": "true"
           }
         ],
         "@babel/react",
@@ -45,9 +42,7 @@
         "@babel/react",
         "@babel/stage-3"
       ],
-      "plugins": [
-        "@babel/transform-react-jsx-source"
-      ]
+      "plugins": ["@babel/transform-react-jsx-source"]
     }
   }
 }

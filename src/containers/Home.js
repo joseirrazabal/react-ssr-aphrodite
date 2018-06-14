@@ -2,10 +2,20 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Button from "Maurio/lib/Atoms/Button/Button";
 
-import { withStyles, css } from "../withStyles";
+// import { withStyles, css } from "../withStyles";
 import ErrorBoundary from "../errorBoundary";
 
 import cssGlobal from "../../css/styles.scss";
+
+import { css, withStyles } from "react-with-styles";
+import ThemedStyleSheet from "react-with-styles/lib/ThemedStyleSheet";
+import aphroditeInterface from "react-with-styles-interface-aphrodite";
+import MyTheme from "Maurio/lib/theme/DefaultTheme";
+ThemedStyleSheet.registerTheme(MyTheme);
+ThemedStyleSheet.registerInterface(aphroditeInterface);
+
+// import "Maurio/initialize";
+import "Maurio/css/storybook.scss";
 
 /*
 class App extends Component {
@@ -105,16 +115,16 @@ class Home extends React.Component {
               <SearchHotels />
             </div>
           }
-          // contentVuelos={
-          //   <div>
-          //     <SearchVuelos />
-          //   </div>
-          // }
-          // contentPaquetes={
-          //   <div>
-          //     <SearchPaquetes />
-          //   </div>
-          // }
+          contentVuelos={
+            <div>
+              <SearchVuelos />
+            </div>
+          }
+          contentPaquetes={
+            <div>
+              <SearchPaquetes />
+            </div>
+          }
         />
         <div {...css(styles.container, styles.marginTopNegativo)}>
           <Slider {...settings} slidesToShow={3} lassName={"carousel"}>

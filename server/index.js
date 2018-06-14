@@ -1,11 +1,27 @@
 import React from "react";
 import { renderToString, renderToStaticMarkup } from "react-dom/server";
 import Helmet from "react-helmet";
-import { StyleSheetServer } from "aphrodite";
+import { StyleSheetServer, minify } from "aphrodite";
 import StaticRouter from "react-router-dom/StaticRouter";
+
+import { SheetsRegistry } from "react-jss/lib/jss";
+import JssProvider from "react-jss/lib/JssProvider";
+import {
+  MuiThemeProvider,
+  createMuiTheme,
+  createGenerateClassName
+} from "@material-ui/core/styles";
 
 import Html from "./html";
 import App from "../src";
+
+const generateClassName = createGenerateClassName();
+// const generateClassName = createGenerateClassName({
+//   dangerouslyUseGlobalCSS: true,
+//   productionPrefix: "c"
+// });
+
+// minify(false);
 
 function getCss({ assetsByChunkName }) {
   var items = [];
@@ -42,10 +58,18 @@ function render(stats, url) {
   const js = getJs(stats);
   const head = Helmet.rewind();
 
+  const sheetsRegistry = new SheetsRegistry();
+  const material = sheetsRegistry.toString();
+
   var { html, css } = StyleSheetServer.renderStatic(() => {
     return renderToString(
       <StaticRouter location={url} context={{}}>
-        <App />
+        <JssProvider
+          registry={sheetsRegistry}
+          generateClassName={generateClassName}
+        >
+          <App />
+        </JssProvider>
       </StaticRouter>
     );
   });
@@ -53,6 +77,7 @@ function render(stats, url) {
   return renderToStaticMarkup(
     <Html
       js={js}
+      material={material}
       styles={css}
       css={cssFiles}
       html={html}
