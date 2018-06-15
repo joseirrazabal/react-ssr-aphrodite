@@ -1,27 +1,21 @@
 import React from "react";
 import { renderToString, renderToStaticMarkup } from "react-dom/server";
-import Helmet from "react-helmet";
-import { StyleSheetServer, minify } from "aphrodite";
 import StaticRouter from "react-router-dom/StaticRouter";
+import { StyleSheetServer } from "aphrodite";
+import Helmet from "react-helmet";
+import { minify } from "html-minifier";
 
 import { SheetsRegistry } from "react-jss/lib/jss";
 import JssProvider from "react-jss/lib/JssProvider";
-import {
-  MuiThemeProvider,
-  createMuiTheme,
-  createGenerateClassName
-} from "@material-ui/core/styles";
+import { createGenerateClassName } from "@material-ui/core/styles";
 
 import Html from "./html";
 import App from "../src";
 
-const generateClassName = createGenerateClassName();
-// const generateClassName = createGenerateClassName({
-//   dangerouslyUseGlobalCSS: true,
-//   productionPrefix: "c"
-// });
-
-// minify(false);
+const generateClassName = createGenerateClassName({
+  productionPrefix: "c"
+});
+const sheetsRegistry = new SheetsRegistry();
 
 function getCss({ assetsByChunkName }) {
   var items = [];
@@ -58,9 +52,6 @@ function render(stats, url) {
   const js = getJs(stats);
   const head = Helmet.rewind();
 
-  const sheetsRegistry = new SheetsRegistry();
-  const material = sheetsRegistry.toString();
-
   var { html, css } = StyleSheetServer.renderStatic(() => {
     return renderToString(
       <StaticRouter location={url} context={{}}>
@@ -72,6 +63,10 @@ function render(stats, url) {
         </JssProvider>
       </StaticRouter>
     );
+  });
+
+  const material = minify(sheetsRegistry.toString(), {
+    collapseWhitespace: true
   });
 
   return renderToStaticMarkup(

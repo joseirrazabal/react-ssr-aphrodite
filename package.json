@@ -8,6 +8,7 @@
     "body-parser": "1.18.3",
     "compression": "1.7.2",
     "express": "4.16.3",
+    "html-minifier": "3.5.16",
     "prop-types": "15.6.1",
     "react": "16.4.0",
     "react-dom": "16.4.0",

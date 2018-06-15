@@ -162,7 +162,12 @@ const config = {
     process: false
   },
   devtool: !IS_PRODUCTION ? "eval" : undefined,
-  bail: IS_PRODUCTION
+  bail: IS_PRODUCTION,
+  externals: [
+    nodeExternals({
+      whitelist: [/\.(?!(?:jsx?|json)$).{1,5}$/i]
+    })
+  ]
   // externals: [nodeExternals()]
   // externals: fs.readdirSync("node_modules").reduce((externals, mod) => {
   //   externals[mod] = `commonjs ${mod}`;
