@@ -2,7 +2,7 @@ import ThemedStyleSheet from "react-with-styles/lib/ThemedStyleSheet";
 import aphroditeInterface from "react-with-styles-interface-aphrodite";
 import { createMuiTheme } from "@material-ui/core/styles";
 
-import MyTheme from "Maurio/lib/theme/DefaultTheme";
+import MyTheme from "Maurio/theme/DefaultTheme";
 ThemedStyleSheet.registerTheme(MyTheme);
 ThemedStyleSheet.registerInterface(aphroditeInterface);
 
