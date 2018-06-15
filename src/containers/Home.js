@@ -4,27 +4,27 @@ import { css, withStyles, withStylesPropTypes } from "react-with-styles";
 import Slider from "react-slick";
 import Grid from "material-ui/Grid";
 
-import Header from "Maurio/lib/Organisms/Header/Header";
-import Footer from "Maurio/lib/Organisms/Footer/Footer";
-import SimpleCard from "Maurio/lib/Molecules/Card/SimpleCard";
-import SlideCard from "Maurio/lib/Molecules/Card/SlideCard";
-import SmallCard from "Maurio/lib/Molecules/Card/SmallCard";
-import VerticalCard from "Maurio/lib/Molecules/Card/VerticalCard";
-import PaquetesCard from "Maurio/lib/Molecules/Card/PaquetesCard";
-import SimpleNews from "Maurio/lib/Molecules/Newsletters/SimpleNews";
+import Header from "Maurio/Organisms/Header/Header";
+import Footer from "Maurio/Organisms/Footer/Footer";
+import SimpleCard from "Maurio/Molecules/Card/SimpleCard";
+import SlideCard from "Maurio/Molecules/Card/SlideCard";
+import SmallCard from "Maurio/Molecules/Card/SmallCard";
+import VerticalCard from "Maurio/Molecules/Card/VerticalCard";
+import PaquetesCard from "Maurio/Molecules/Card/PaquetesCard";
+import SimpleNews from "Maurio/Molecules/Newsletters/SimpleNews";
 import {
   TitleSecondary,
   TitleH3,
   Text
-} from "Maurio/lib/Atoms/TitleLabel/TitleLabel";
-import BackgroundImageHome from "Maurio/lib/Organisms/BackgroundImageHome/BackgroundImageHome";
-import SearchHotels from "Maurio/lib/Organisms/Search/SearchHotels";
-import SearchVuelos from "Maurio/lib/Organisms/Search/SearchVuelos";
-import SearchPaquetes from "Maurio/lib/Organisms/Search/SearchPaquetes";
-import SearchHotelsMobile from "Maurio/lib/Organisms/Search/SearchHotelsMobile";
-import SearchVuelosMobile from "Maurio/lib/Organisms/Search/SearchVuelosMobile";
-import SearchPaquetesMobile from "Maurio/lib/Organisms/Search/SearchPaquetesMobile";
-import ListCards from "Maurio/lib/Organisms/ListCards/ListCards";
+} from "Maurio/Atoms/TitleLabel/TitleLabel";
+import BackgroundImageHome from "Maurio/Organisms/BackgroundImageHome/BackgroundImageHome";
+import SearchHotels from "Maurio/Organisms/Search/SearchHotels";
+import SearchVuelos from "Maurio/Organisms/Search/SearchVuelos";
+import SearchPaquetes from "Maurio/Organisms/Search/SearchPaquetes";
+import SearchHotelsMobile from "Maurio/Organisms/Search/SearchHotelsMobile";
+import SearchVuelosMobile from "Maurio/Organisms/Search/SearchVuelosMobile";
+import SearchPaquetesMobile from "Maurio/Organisms/Search/SearchPaquetesMobile";
+import ListCards from "Maurio/Organisms/ListCards/ListCards";
 
 const settings = {
   className: "center",
@@ -82,37 +82,40 @@ class Home extends React.Component {
         <BackgroundImageHome
           contentHotels={
             <div>
-              <SearchHotels /><SearchHotelsMobile />
+              <SearchHotels />
+              <SearchHotelsMobile />
             </div>
           }
           contentVuelos={
             <div>
-              <SearchVuelos /><SearchVuelosMobile />
+              <SearchVuelos />
+              <SearchVuelosMobile />
             </div>
           }
           contentPaquetes={
             <div>
-              <SearchPaquetes /><SearchPaquetesMobile />
+              <SearchPaquetes />
+              <SearchPaquetesMobile />
             </div>
           }
         />
-        <div {...css(styles.container, styles.marginTopNegativo) }>
+        <div {...css(styles.container, styles.marginTopNegativo)}>
           <Slider {...settings} slidesToShow={3} lassName={"carousel"}>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SmallCard
                 image="https://images.pexels.com/photos/709860/pexels-photo-709860.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
                 title="Vuelos a Berlin"
                 subtitle="desde $17000"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SmallCard
                 image="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
                 title={"Hoteles en Miami"}
                 subtitle="por noche desde $400"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SmallCard
                 image="https://images.pexels.com/photos/60204/pexels-photo-60204.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
                 title={"Paquetes a Buzios"}
@@ -121,27 +124,27 @@ class Home extends React.Component {
             </div>
           </Slider>
         </div>
-        <div {...css(styles.paddingBox) }>
+        <div {...css(styles.paddingBox)}>
           <ListCards />
         </div>
-        <div {...css(styles.container) }>
-          <Grid xs={12} {...css(styles.paddingBox) }>
+        <div {...css(styles.container)}>
+          <Grid xs={12} {...css(styles.paddingBox)}>
             <TitleSecondary center content="Hoteles mas buscados en Miami" />
           </Grid>
           <Slider {...settings} slidesToShow={3} className={"carousel"}>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SlideCard
                 title={"Hotel Buenos Aires Ejemplo dos titulo largo…"}
                 precio={"26850"}
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SlideCard
                 title={"Hotel Buenos Aires Ejemplo dos titulo largo…"}
                 precio={"26850"}
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SlideCard
                 title={"Hotel Buenos Aires Ejemplo dos titulo largo…"}
                 precio={"26850"}
@@ -149,12 +152,12 @@ class Home extends React.Component {
             </div>
           </Slider>
         </div>
-        <div {...css(styles.container) }>
-          <Grid xs={12} {...css(styles.paddingBox) }>
+        <div {...css(styles.container)}>
+          <Grid xs={12} {...css(styles.paddingBox)}>
             <TitleSecondary center content="Europa a tu medida!" />
           </Grid>
           <Slider {...settings} slidesToShow={3} className={"carousel"}>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SimpleCard
                 destino="Hoteles en Miami"
                 precio="1200"
@@ -162,7 +165,7 @@ class Home extends React.Component {
                 imageUrl="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SimpleCard
                 destino="Hoteles en Miami"
                 precio="1200"
@@ -170,7 +173,7 @@ class Home extends React.Component {
                 imageUrl="https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <SimpleCard
                 destino="Hoteles en Miami"
                 precio="1200"
@@ -180,12 +183,12 @@ class Home extends React.Component {
             </div>
           </Slider>
         </div>
-        <div {...css(styles.container) }>
-          <Grid xs={12} {...css(styles.paddingBox) }>
+        <div {...css(styles.container)}>
+          <Grid xs={12} {...css(styles.paddingBox)}>
             <TitleSecondary center content="Viajes que te van a encantar" />
           </Grid>
           <Slider {...settings} slidesToShow={3} className={"carousel"}>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <PaquetesCard
                 title="Búzios"
                 fecha="de Junio a Julio"
@@ -195,7 +198,7 @@ class Home extends React.Component {
                 imageUrl="https://images.pexels.com/photos/60204/pexels-photo-60204.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <PaquetesCard
                 title="Punta Cana"
                 fecha="Salidas de Junio a Noviembre"
@@ -205,7 +208,7 @@ class Home extends React.Component {
                 imageUrl="https://media.aleanitravel.com/eyJ3IjozNDgsImgiOjI5MCwic3JjIjoiaHR0cHM6Ly9hbGVhbmktYXNzZXRzLnMzLmFtYXpvbmF3cy5jb20vd2ViL2ltYWdlcy9nZW8vNWEzMmFkYTEtNTc0My00M2VkLTk0MDYtMDkzODdkNzY2ZjM1X18xMS5qcGciLCJ2IjoxfQ==.jpg"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <PaquetesCard
                 title="Varadero y La Habana"
                 fecha="Salidas de Junio a Noviembre"
@@ -217,15 +220,15 @@ class Home extends React.Component {
             </div>
           </Slider>
         </div>
-        <div {...css(styles.paddingBox) }>
+        <div {...css(styles.paddingBox)}>
           <SimpleNews />
         </div>
-        <div {...css(styles.container) }>
-          <Grid xs={12} {...css(styles.paddingBox) }>
+        <div {...css(styles.container)}>
+          <Grid xs={12} {...css(styles.paddingBox)}>
             <TitleSecondary center content="Ofertas en Vuelos" />
           </Grid>
           <Slider {...settings} slidesToShow={4} className={"carousel"}>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <VerticalCard
                 title="Vuelos a Londres"
                 subtitle="ida y vuelta"
@@ -235,7 +238,7 @@ class Home extends React.Component {
                 imageUrl="https://images.pexels.com/photos/397431/pexels-photo-397431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <VerticalCard
                 title="Vuelos a Londres"
                 subtitle="ida y vuelta"
@@ -245,7 +248,7 @@ class Home extends React.Component {
                 imageUrl="https://images.pexels.com/photos/164041/pexels-photo-164041.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <VerticalCard
                 title="Vuelos a Londres"
                 subtitle="ida y vuelta"
@@ -255,7 +258,7 @@ class Home extends React.Component {
                 imageUrl="https://images.pexels.com/photos/416673/pexels-photo-416673.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
               />
             </div>
-            <div {...css(styles.items) }>
+            <div {...css(styles.items)}>
               <VerticalCard
                 title="Vuelos a Londres"
                 subtitle="ida y vuelta"
@@ -282,7 +285,6 @@ Home.propTypes = {
 };
 
 export default withStyles(({ mauri: { color, variables } }) => ({
-
   noWrapper: {
     "@media (max-width: 800px)": {
       overflowX: "scroll",
@@ -311,5 +313,4 @@ export default withStyles(({ mauri: { color, variables } }) => ({
     paddingTop: 20,
     paddingBottom: 20
   }
-
 }))(Home);
