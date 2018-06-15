@@ -3,7 +3,7 @@ import { renderToString, renderToStaticMarkup } from "react-dom/server";
 import StaticRouter from "react-router-dom/StaticRouter";
 import { StyleSheetServer } from "aphrodite";
 import Helmet from "react-helmet";
-import { minify } from "html-minifier";
+// import { minify } from "html-minifier";
 
 import { SheetsRegistry } from "react-jss/lib/jss";
 import JssProvider from "react-jss/lib/JssProvider";
@@ -65,9 +65,10 @@ function render(stats, url) {
     );
   });
 
-  const material = minify(sheetsRegistry.toString(), {
-    collapseWhitespace: true
-  });
+  // const material = minify(sheetsregistry.tostring(), {
+  //   collapseWhitespace: true
+  // });
+  const material = sheetsRegistry.toString();
 
   return renderToStaticMarkup(
     <Html
