@@ -1,20 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import ErrorBoundary from "../errorBoundary";
 import cssGlobal from "../../css/styles.scss";
-
-import SearchHotels from "Maurio/lib/Organisms/Search/SearchHotels";
-import SearchPaquetes from "Maurio/lib/Organisms/Search/SearchPaquetes";
-// import SearchVuelos from "Maurio/lib/Organisms/Search/SearchVuelos";
+import Landing from "Maurio/lib/Templates/Landing/Landing";
 
 class App extends Component {
   render() {
     return (
       <ErrorBoundary>
-        <SearchHotels />
-        <div className={cssGlobal.prueba}>123</div>
-        <SearchPaquetes />
+        <Landing />
       </ErrorBoundary>
     );
   }
