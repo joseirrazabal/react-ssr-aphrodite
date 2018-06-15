@@ -889,9 +889,9 @@
     "@webassemblyjs/wast-parser" "1.5.10"
     long "^3.2.0"
 
-Maurio@0.0.62:
-  version "0.0.62"
-  resolved "http://vidanueva.com.ar:4873/Maurio/-/Maurio-0.0.62.tgz#21e7111ea7c1ac0d5daf35b10e888ef48037de76"
+Maurio@0.0.66:
+  version "0.0.66"
+  resolved "http://6a0e4ac6.ngrok.io/Maurio/-/Maurio-0.0.66.tgz#0adb07678672101ca5c5cbaeefe1570fb066db59"
   dependencies:
     "@material-ui/core" "^1.0.0-rc.0"
     "@material-ui/icons" "^1.0.0-beta.42"
@@ -916,14 +916,16 @@ Maurio@0.0.62:
     react-moment-proptypes "^1.5.0"
     react-portal "^4.1.2"
     react-router-dom "^4.2.2"
+    react-select "^1.2.1"
     react-sizeme "^2.4.2"
     react-slick "^0.23.1"
     react-sticky "^6.0.1"
     react-swipeable-views "^0.12.13"
-    react-with-styles "^3.2.0"
-    react-with-styles-interface-aphrodite "^5.0.0"
+    react-with-styles "^3.1.0"
+    react-with-styles-interface-aphrodite "^4.0.1"
     react-with-styles-interface-css "^4.0.1"
     react-with-styles-interface-css-compiler "^1.1.2"
+    react-with-styles-interface-jss "^0.1.0"
     rheostat "^2.2.0"
     slick-carousel "^1.8.1"
     webfontloader "^1.6.28"
@@ -2475,6 +2477,10 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+classnames@^2.2.4:
+  version "2.2.6"
+  resolved "http://6a0e4ac6.ngrok.io/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
 classnames@^2.2.5:
   version "2.2.5"
@@ -5674,6 +5680,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+jss-camel-case@^2.0.0:
+  version "2.0.2"
+  resolved "http://6a0e4ac6.ngrok.io/jss-camel-case/-/jss-camel-case-2.0.2.tgz#62776f1480c4a2d4270745ab6ec6cb9f29a1e4e5"
+
 jss-camel-case@^6.0.0, jss-camel-case@^6.1.0:
   version "6.1.0"
   resolved "http://vidanueva.com.ar:4873/jss-camel-case/-/jss-camel-case-6.1.0.tgz#ccb1ff8d6c701c02a1fed6fb6fb6b7896e11ce44"
@@ -5686,6 +5696,10 @@ jss-compose@^5.0.0:
   dependencies:
     warning "^3.0.0"
 
+jss-default-unit@^4.0.1:
+  version "4.1.4"
+  resolved "http://6a0e4ac6.ngrok.io/jss-default-unit/-/jss-default-unit-4.1.4.tgz#57b9462981b5f299ecea608b84c7e6235614c1e7"
+
 jss-default-unit@^8.0.2:
   version "8.0.2"
   resolved "http://vidanueva.com.ar:4873/jss-default-unit/-/jss-default-unit-8.0.2.tgz#cc1e889bae4c0b9419327b314ab1c8e2826890e6"
@@ -5693,6 +5707,12 @@ jss-default-unit@^8.0.2:
 jss-expand@^5.3.0:
   version "5.3.0"
   resolved "http://vidanueva.com.ar:4873/jss-expand/-/jss-expand-5.3.0.tgz#02be076efe650125c842f5bb6fb68786fe441ed6"
+
+jss-extend@^2.0.1:
+  version "2.0.6"
+  resolved "http://6a0e4ac6.ngrok.io/jss-extend/-/jss-extend-2.0.6.tgz#fc99e334b4e3feb96ce3382dcd22792ab00496b0"
+  dependencies:
+    warning "^3.0.0"
 
 jss-extend@^6.2.0:
   version "6.2.0"
@@ -5704,11 +5724,28 @@ jss-global@^3.0.0:
   version "3.0.0"
   resolved "http://vidanueva.com.ar:4873/jss-global/-/jss-global-3.0.0.tgz#e19e5c91ab2b96353c227e30aa2cbd938cdaafa2"
 
+jss-nested@^2.2.0:
+  version "2.5.0"
+  resolved "http://6a0e4ac6.ngrok.io/jss-nested/-/jss-nested-2.5.0.tgz#d1a5ec778bcc3352616c8917abbed0b80ef1286f"
+  dependencies:
+    warning "^3.0.0"
+
 jss-nested@^6.0.1:
   version "6.0.1"
   resolved "http://vidanueva.com.ar:4873/jss-nested/-/jss-nested-6.0.1.tgz#ef992b79d6e8f63d939c4397b9d99b5cbbe824ca"
   dependencies:
     warning "^3.0.0"
+
+jss-preset-default@^0.3.1:
+  version "0.3.1"
+  resolved "http://6a0e4ac6.ngrok.io/jss-preset-default/-/jss-preset-default-0.3.1.tgz#e22138227c45704b6ab5fffc0c9b6aba1af8861e"
+  dependencies:
+    jss-camel-case "^2.0.0"
+    jss-default-unit "^4.0.1"
+    jss-extend "^2.0.1"
+    jss-nested "^2.2.0"
+    jss-props-sort "^2.0.0"
+    jss-vendor-prefixer "^3.0.0"
 
 jss-preset-default@^4.3.0:
   version "4.5.0"
@@ -5725,6 +5762,10 @@ jss-preset-default@^4.3.0:
     jss-template "^1.0.1"
     jss-vendor-prefixer "^7.0.0"
 
+jss-props-sort@^2.0.0:
+  version "2.0.2"
+  resolved "http://6a0e4ac6.ngrok.io/jss-props-sort/-/jss-props-sort-2.0.2.tgz#ea74663d43970d68553008d7c3eb07859ef45ea1"
+
 jss-props-sort@^6.0.0:
   version "6.0.0"
   resolved "http://vidanueva.com.ar:4873/jss-props-sort/-/jss-props-sort-6.0.0.tgz#9105101a3b5071fab61e2d85ea74cc22e9b16323"
@@ -5734,6 +5775,12 @@ jss-template@^1.0.1:
   resolved "http://vidanueva.com.ar:4873/jss-template/-/jss-template-1.0.1.tgz#09aed9d86cc547b07f53ef355d7e1777f7da430a"
   dependencies:
     warning "^3.0.0"
+
+jss-vendor-prefixer@^3.0.0:
+  version "3.0.3"
+  resolved "http://6a0e4ac6.ngrok.io/jss-vendor-prefixer/-/jss-vendor-prefixer-3.0.3.tgz#b36a9cb36273707595d8b60c84d07d60947e8254"
+  dependencies:
+    css-vendor "^0.3.8"
 
 jss-vendor-prefixer@^7.0.0:
   version "7.0.0"
@@ -7884,6 +7931,12 @@ react-icons@^2.2.7:
   dependencies:
     react-icon-base "2.1.0"
 
+react-input-autosize@^2.1.2:
+  version "2.2.1"
+  resolved "http://6a0e4ac6.ngrok.io/react-input-autosize/-/react-input-autosize-2.2.1.tgz#ec428fa15b1592994fb5f9aa15bb1eb6baf420f8"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-jss@^8.1.0:
   version "8.5.0"
   resolved "http://vidanueva.com.ar:4873/react-jss/-/react-jss-8.5.0.tgz#a0eff645743082e06a6c42b7c5ab4939d7af4c27"
@@ -7952,6 +8005,14 @@ react-scrollbar-size@^2.0.2:
     prop-types "^15.6.0"
     react-event-listener "^0.5.1"
     stifle "^1.0.2"
+
+react-select@^1.2.1:
+  version "1.2.1"
+  resolved "http://6a0e4ac6.ngrok.io/react-select/-/react-select-1.2.1.tgz#a2fe58a569eb14dcaa6543816260b97e538120d1"
+  dependencies:
+    classnames "^2.2.4"
+    prop-types "^15.5.8"
+    react-input-autosize "^2.1.2"
 
 react-side-effect@^1.1.0:
   version "1.1.5"
@@ -8042,9 +8103,19 @@ react-with-direction@^1.1.0:
     object.values "^1.0.4"
     prop-types "^15.6.0"
 
-react-with-styles-interface-aphrodite@5.0.0, react-with-styles-interface-aphrodite@^5.0.0:
+react-with-styles-interface-aphrodite@5.0.0:
   version "5.0.0"
   resolved "http://vidanueva.com.ar:4873/react-with-styles-interface-aphrodite/-/react-with-styles-interface-aphrodite-5.0.0.tgz#a2b80aca271f5877ec48e0641cee2cdeb2ca2b3c"
+  dependencies:
+    array-flatten "^2.1.1"
+    has "^1.0.1"
+    object.assign "^4.1.0"
+    object.entries "^1.0.4"
+    rtl-css-js "^1.8.0"
+
+react-with-styles-interface-aphrodite@^4.0.1:
+  version "4.0.2"
+  resolved "http://6a0e4ac6.ngrok.io/react-with-styles-interface-aphrodite/-/react-with-styles-interface-aphrodite-4.0.2.tgz#c5ec4a87274325006e51ec0c468d28d2ab386890"
   dependencies:
     array-flatten "^2.1.1"
     has "^1.0.1"
@@ -8081,7 +8152,14 @@ react-with-styles-interface-css@^4.0.1:
     array.prototype.flatten "^1.2.1"
     global-cache "^1.2.1"
 
-react-with-styles@^3.1.0, react-with-styles@^3.2.0:
+react-with-styles-interface-jss@^0.1.0:
+  version "0.1.0"
+  resolved "http://6a0e4ac6.ngrok.io/react-with-styles-interface-jss/-/react-with-styles-interface-jss-0.1.0.tgz#d0e624e13112dc6217daa22275f39589250d63dd"
+  dependencies:
+    classnames "^2.2.5"
+    jss-preset-default "^0.3.1"
+
+react-with-styles@^3.1.0:
   version "3.2.0"
   resolved "http://vidanueva.com.ar:4873/react-with-styles/-/react-with-styles-3.2.0.tgz#b3fb7c219e6288ce572ad32fddd463d55c395058"
   dependencies:
