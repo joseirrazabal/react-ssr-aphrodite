@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "@babel/polyfill": "7.0.0-beta.49",
-    "Maurio": "0.0.66",
+    "Maurio": "0.0.68",
     "app-root-dir": "1.0.2",
     "body-parser": "1.18.3",
     "compression": "1.7.2",
