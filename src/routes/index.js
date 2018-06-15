@@ -3,13 +3,14 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 // import { PageNotFound, Layout } from "../components";
 
-// import Home from "../containers/Home.js";
-import Home from "../containers/Prueba.js";
+//import Home from "../containers/Home.js";
+import Ayuda from "../containers/Ayuda.js";
+//import Home from "../containers/Prueba.js";
 
 const routes = [
   {
     path: "/",
-    Component: Home,
+    Component: Ayuda,
     useLayout: true,
     isPrivate: false
   }
