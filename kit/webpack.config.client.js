@@ -27,7 +27,7 @@ const config = {
   mode: !IS_PRODUCTION ? "development" : "production",
   name: "client",
   context: path.join(appRootDir.get()),
-  entry: ["@babel/polyfill", ...devEntries, "./client"],
+  entry: { client: ["@babel/polyfill", ...devEntries, "./client"] },
   output: {
     path: path.join(appRootDir.get(), "dist"),
     filename: !IS_PRODUCTION ? "client/[name].js" : "client/[name].js",

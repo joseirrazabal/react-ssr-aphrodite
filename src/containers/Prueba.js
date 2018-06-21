@@ -7,11 +7,7 @@ import Landing from "Maurio/Templates/Landing/Landing";
 
 class App extends Component {
   render() {
-    return (
-      <ErrorBoundary>
-        <Landing />
-      </ErrorBoundary>
-    );
+    return <ErrorBoundary>123-123-123</ErrorBoundary>;
   }
 }
 

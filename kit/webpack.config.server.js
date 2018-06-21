@@ -23,7 +23,7 @@ const config = {
   mode: "development",
   name: "server",
   context: path.join(appRootDir.get()),
-  entry: ["./server"],
+  entry: { server: ["./server"] },
   output: {
     path: path.join(appRootDir.get(), "dist"),
     filename: "server/[name].js",
@@ -145,6 +145,9 @@ const config = {
       "process.env": {
         NODE_ENV: JSON.stringify(NODE_ENV)
       }
+    }),
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1
     })
     // new ManifestPlugin({
     //   fileName: "server-manifest.json",

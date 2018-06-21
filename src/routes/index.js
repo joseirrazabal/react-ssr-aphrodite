@@ -1,16 +1,22 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import Loadable from "react-loadable";
 
 // import { PageNotFound, Layout } from "../components";
 
+var Home = Loadable({
+  loader: () => import("../containers/Prueba"),
+  loading() {
+    return <div>cargando...</div>;
+  }
+});
+
 //import Home from "../containers/Home.js";
-import Ayuda from "../containers/Ayuda.js";
-//import Home from "../containers/Prueba.js";
 
 const routes = [
   {
     path: "/",
-    Component: Ayuda,
+    Component: Home,
     useLayout: true,
     isPrivate: false
   }

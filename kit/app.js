@@ -47,7 +47,7 @@ if (isDevelopment) {
       { log: false }
     )
   );
-  app.use(webpackHotServerMiddleware(multiCompiler));
+  app.use(webpackHotServerMiddleware(multiCompiler, { chunkName: "server" }));
 
   // multiCompiler.plugin("done", function() {
   // });
